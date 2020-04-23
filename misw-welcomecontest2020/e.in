@@ -1,0 +1,46 @@
+nerima
+4 nakano, suginami, tosima, itabasi
+suginami 
+4 nerima, nakano, setagaya, sibuya
+setagaya 
+4 suginami, sibuya, meguro, oota
+oota 
+3 setagaya, meguro, sinagawa
+sinagawa
+4 meguro, minato, sibuya, oota
+meguro
+4 oota, setagaya, sibuya, sinagawa
+minato
+5 sinagawa, sibuya, sinjuku, tiyoda, tyuuou
+sibuya
+7 sinagawa, minato, sinjuku, nakano, suginami, setagaya, meguro
+nakano
+5 suginami, nerima, tosima, sinjuku, sibuya
+sinjuku
+6 tosima, nakano, sibuya, minato, tiyoda, bunkyou
+tiyoda
+5 minato, tyuuou, taitou, bunkyou, sinjuku
+tyuuou
+5 minato, tiyoda, taitou, sumida, koutou
+koutou
+3 tyuuou, sumida, edogawa
+edogawa
+3 koutou, sumida, katusika
+sumida
+7 edogawa, katusika, adati, arakawa, taitou, tyuuou, koutou
+taitou
+5 sumida, tyuuou, tiyoda, bunkyou, arakawa
+bunkyou
+6 kita, arakawa, taitou, tiyoda, sinjuku, tosima
+tosima
+6 nerima, itabasi, kita, bunkyou, sinjuku, nakano
+itabasi
+3 nerima, tosima, kita
+kita
+5 itabasi, tosima, bunkyou, arakawa, adati
+adati
+4 kita, arakawa, sumida, katusika
+katusika
+3 adati, sumida, edogawa
+arakawa
+5 kita, adati, sumida, taitou, bunkyou
