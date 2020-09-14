@@ -9,4 +9,5 @@ hackerrankのような、提出コードが見られないコンテストにつ�
 | [MIS.W新歓コンテスト2020](https://www.hackerrank.com/contests/misw-welcomecontest2020/challenges) | [リンク](https://github.com/emtsubasa/kpro/tree/master/misw-welcomecontest2020) | [リンク](https://emtubasa.hateblo.jp/entry/2020/04/23/210517) |
 | [Waseda Orientation Programming Contest 2020](https://wpcs2.herokuapp.com/contests/12) | [リンク](https://github.com/emtsubasa/kpro/tree/master/wasedaorientation2020) | [J問題解説](https://emtubasa.hateblo.jp/entry/2020/05/16/162609) |
 | [PAST3](https://atcoder.jp/contests/past202005-open) | [リンク](https://github.com/emtsubasa/kpro/tree/master/past3) | - |
+| [HUPC2020DAY1](https://onlinejudge.u-aizu.ac.jp/services/room.html#HUPC2020Day1/info) | [リンク](https://github.com/emtsubasa/kpro/tree/master/hupc/day1) |  | 
 
