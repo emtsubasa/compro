@@ -11,3 +11,4 @@ hackerrankのような、提出コードが見られないコンテストにつ�
 | [PAST3](https://atcoder.jp/contests/past202005-open) | [リンク](https://github.com/emtsubasa/kpro/tree/master/past3) | - |
 | [HUPC2020DAY1](https://onlinejudge.u-aizu.ac.jp/services/room.html#HUPC2020Day1/info) | [リンク](https://github.com/emtsubasa/kpro/tree/master/hupc/day1) | [感想](https://emtubasa.hateblo.jp/entry/2020/09/14/165634) | 
 | [HUPC2020DAY2](https://onlinejudge.u-aizu.ac.jp/services/room.html#HUPC2020Day2/info) | [リンク](https://github.com/emtsubasa/kpro/tree/master/hupc/day2) | [感想](https://emtubasa.hateblo.jp/entry/2020/09/15/190918) | 
+| [HUPC2020DAY3](https://onlinejudge.u-aizu.ac.jp/services/room.html#HUPC2020Day3/info) | [リンク](https://github.com/emtsubasa/kpro/tree/master/hupc/day3) | [感想](https://emtubasa.hateblo.jp/entry/2020/09/16/214444) | 
