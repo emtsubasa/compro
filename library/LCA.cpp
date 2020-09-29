@@ -1,13 +1,13 @@
-struct LowestCommonAncestor {
+struct LCA {
   int n, root, h;
   vector<vector<int>> g, par;
   vector<int> dep;
-  LowestCommonAncestor(int _n = 1, int r = 0) : n(n), root(r), g(n), dep(n) {
+  LCA(int _n = 1, int r = 0) : n(n), root(r), g(n), dep(n) {
     h = 1;
     while ((1 << h) <= n) ++h;
     par.assign(h, vector<int>(n, -1));
   }
-  LowestCommonAncestor(const vector<vector<int>> &_g, const int r = 0)
+  LCA(const vector<vector<int>> &_g, const int r = 0)
       : n(_g.size()), root(r), g(_g), dep(_g.size()) {
     h = 1;
     while ((1 << h) <= n) ++h;

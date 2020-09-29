@@ -12,7 +12,7 @@ struct KMP {
     for (int i = 0, j = -1; i < n; ++i) {
       while (j >= 0 && s[i] != s[j]) j = A[j];
       ++j;
-      /*
+      /* KMP
       if(i + 1 < n && s[i + 1] == s[j])
         A[i + 1] = A[j];
       else

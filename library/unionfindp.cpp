@@ -1,8 +1,8 @@
-struct UnionFindP {
+struct UnionfindP {
   using P = pair<int, int>;
   vector<int> par, last;
   vector<vector<P>> hist;
-  UnionFindP(int n = 1) : par(n, -1), last(n, -1), hist(n) {
+  UnionfindP(int n = 1) : par(n, -1), last(n, -1), hist(n) {
     for (auto& v : hist) v.emplace_back(-1, -1);
   }
   int root(int t, int x) {

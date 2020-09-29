@@ -1,5 +1,5 @@
 template <class T>
-struct Unionfindw {
+struct UnionfindW {
   // tree number
   vector<int> par;
   // tree rank
@@ -8,7 +8,7 @@ struct Unionfindw {
   vector<T> weight;
   const int inf = 2147483647;
   // constructor
-  Unionfindw(int n = 1, T initialnum = 0) { stree(n + 1, initialnum); }
+  UnionfindW(int n = 1, T initialnum = 0) { stree(n + 1, initialnum); }
   // make and initialization
   void stree(int n = 1, T initialnum = 0) {
     par.assign(n, -1);

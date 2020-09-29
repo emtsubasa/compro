@@ -23,8 +23,8 @@ long long calcinv(long long a, long long m) {
 
 // x=b_i(mod m_i) calc min x,lcm(m_i).
 // if not exist, return (-1,-1)
-pair<long long, long long> ChineseRem(const vector<long long>& b,
-                                      const vector<long long>& m) {
+pair<long long, long long> chinese_rem(const vector<long long>& b,
+                                       const vector<long long>& m) {
   long long r = 0, lcm = 1;
   assert(b.size() == m.size());
   long long bsize = b.size();
@@ -41,7 +41,7 @@ pair<long long, long long> ChineseRem(const vector<long long>& b,
 
 // x=b_i(mod m_i) calc min x(mod nowMOD).
 // if not exist, return -1
-long long Garner(vector<long long>& b, vector<long long>& m,
+long long garner(vector<long long>& b, vector<long long>& m,
                  long long nowMOD = 9223372036854775807LL) {
   assert(b.size() == m.size());
   // prepair, O(N^2)

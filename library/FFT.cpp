@@ -61,7 +61,7 @@ struct FFT {
       for (int i = 0; i < n; ++i) a[i] /= n;
   }
   template <class T>
-  vector<long long> mul(const vector<T> &a, const vector<T> &b) {
+  vector<long long> multiply(const vector<T> &a, const vector<T> &b) {
     int need = a.size() + b.size() - 1;
     int nb = 1;
     while ((1 << nb) < need) ++nb;

@@ -1,6 +1,6 @@
 // MOD ver.
 #define MOD (long long)(1e9 + 7)
-int GaussJordan(Matrix<ModInt<MOD>> &A, bool is_extended = false) {
+int gauss_jordan(Matrix<ModInt<MOD>> &A, bool is_extended = false) {
   int m = A.height(), n = A.width(), rank = 0;
   for (int col = 0; col < n; ++col) {
     if (is_extended && col == n - 1) break;
@@ -34,7 +34,7 @@ int linear_equation(Matrix<ModInt<MOD>> A, vector<ModInt<MOD>> b,
     for (int j = 0; j < n; ++j) M[i][j] = A[i][j];
     M[i][n] = b[i];
   }
-  int rank = GaussJordan(M, 1);
+  int rank = gauss_jordan(M, 1);
   ans.assign(n, 0);
   for (int i = 0; i < rank; ++i) ans[i] = M[i][n];
   // exist?
