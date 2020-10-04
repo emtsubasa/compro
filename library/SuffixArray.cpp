@@ -1,10 +1,10 @@
 template <class T>
-struct Suffix_Array {
+struct SuffixArray {
   T s;
   int ssize, nowlen;
   vector<int> rank, tmp, sa, lcp;
-  Suffix_Array() {}
-  Suffix_Array(T news, bool reqlcp = 0) {
+  SuffixArray() {}
+  SuffixArray(T news, bool reqlcp = 0) {
     s = news;
     ssize = s.size();
     nowlen = 0;

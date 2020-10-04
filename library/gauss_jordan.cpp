@@ -1,3 +1,4 @@
+// use Matrix, ModInt
 // MOD ver.
 #define MOD (long long)(1e9 + 7)
 int gauss_jordan(Matrix<ModInt<MOD>> &A, bool is_extended = false) {

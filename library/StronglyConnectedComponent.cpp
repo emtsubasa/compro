@@ -1,9 +1,9 @@
-struct Strongly_Connected_Component {
+struct StronglyConnectedComponent {
   int n, k;
   vector<vector<int>> G, reverseG;
   vector<int> vs, cmp;
   vector<bool> used;
-  Strongly_Connected_Component(int newv = 1) {
+  StronglyConnectedComponent(int newv = 1) {
     n = newv;
     G.resize(n);
     reverseG.resize(n);
