@@ -92,4 +92,10 @@ struct Combination {
     if (n < 0 || r < 0) return (0);
     return r == 0 ? 1 : C(n + r - 1, r);
   }
+
+  ModInt<> Catalan(int n) {
+    // C(2n,n) / (n + 1)
+    return fact(2 * n) * rfact(n + 1) * rfact(n);
+  }
 };
+using mint = ModInt<>;

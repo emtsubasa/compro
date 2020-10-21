@@ -64,3 +64,4 @@ struct ModInt {
   }
   constexpr int get_mod() { return mod; }
 };
+using mint = ModInt<>;
