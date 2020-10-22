@@ -10,4 +10,4 @@ unsigned long long popcount(unsigned long long x) {
 // 1000 -> 3
 inline int trail(unsigned long long s) { return (s ? __builtin_ctzll(s) : 64); }
 // 111 -> 29
-inline int lead(unsigned long long s) { return (s ? __builtin_ctzll(s) : 64); }
+inline int lead(unsigned long long s) { return (s ? __builtin_clzll(s) : 64); }
