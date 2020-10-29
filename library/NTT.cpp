@@ -23,7 +23,10 @@ struct NTT {
     return res;
   }
 
-  inline int inv(int x) { return mpow(x, mod - 2); }
+  inline int inv(int x) {
+    assert(x != 0);
+    return mpow(x, mod - 2);
+  }
 
   inline int add(int x, int y) {
     if ((x += y) >= mod) x -= mod;
@@ -53,8 +56,9 @@ struct NTT {
   }
   void ntt(vector<int> &a, int n, bool sg = 0) {
     assert((n & (n - 1)) == 0);
+    int dif = base - __builtin_ctz(n);
     for (int i = 0; i < n; ++i)
-      if (i < rv[i]) swap(a[i], a[rv[i]]);
+      if (i < (rv[i] >> dif)) swap(a[i], a[rv[i] >> dif]);
     for (int k = 1; k < n; k <<= 1)
       for (int i = 0; i < n; i += 2 * k)
         for (int j = 0; j < k; ++j) {

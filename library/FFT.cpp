@@ -48,8 +48,9 @@ struct FFT {
   }
   void fft(vector<CP> &a, int n, bool sg = 0) {
     assert((n & (n - 1)) == 0);
+    int dif = base - __builtin_ctz(n);
     for (int i = 0; i < n; ++i)
-      if (i < rv[i]) swap(a[i], a[rv[i]]);
+      if (i < (rv[i] >> dif)) swap(a[i], a[rv[i] >> dif]);
     for (int k = 1; k < n; k <<= 1)
       for (int i = 0; i < n; i += 2 * k)
         for (int j = 0; j < k; ++j) {
