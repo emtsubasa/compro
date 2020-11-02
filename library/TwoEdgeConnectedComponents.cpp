@@ -23,6 +23,7 @@ struct TwoEdgeConnectedComponents {
     int k = 0;
     for (int i = 0; i < n; ++i)
       if (ord[i] < 0) lowlinkdfs(i, -1, k);
+    sort(articulation.begin(), articulation.end());
   }
   void lowlinkdfs(int now, int par, int &k) {
     ord[now] = low[now] = k++;

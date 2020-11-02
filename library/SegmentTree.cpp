@@ -26,9 +26,7 @@ struct SegmentTree {
   // "go up" process
   void update(int k, T newdata) {
     dat[k += n] = newdata;
-    while (k >>= 1) {
-      dat[k] = f(dat[(k << 1) | 0], dat[(k << 1) | 1]);
-    }
+    while (k >>= 1) dat[k] = f(dat[k << 1], dat[(k << 1) | 1]);
   }
   // [a,b)
   T query(int a, int b) {
