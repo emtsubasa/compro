@@ -21,6 +21,24 @@ long long calcinv(long long a, long long m) {
   return (s + m) % m;
 }
 
+// a * x = b_i(mod m_i) calc min x,lcm(m_i).
+// if not exist, return (-1,-1)
+pair<long long, long long> linear_congruence(const vector<long long>& a,
+                                             const vector<long long>& b,
+                                             const vector<long long>& m) {
+  long long x = 0, l = 1;
+  assert(b.size() == m.size() && a.size() == b.size());
+  long long len = a.size();
+  for (int i = 0; i < len; ++i) {
+    long long p = a[i] * l, q = b[i] - a[i] * x, d = gcd(m[i], p);
+    if (q % d != 0) return make_pair(-1, -1);
+    long long t = q / d * calcinv(p / d, m[i] / d) % (m[i] / d);
+    x += l * t;
+    l *= m[i] / d;
+  }
+  return make_pair(x % l, l);
+}
+
 // x=b_i(mod m_i) calc min x,lcm(m_i).
 // if not exist, return (-1,-1)
 pair<long long, long long> chinese_rem(const vector<long long>& b,

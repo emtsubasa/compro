@@ -88,6 +88,39 @@ struct Matrix {
       for (int j = 0; j < n; ++j) res[i][j] = B[i][j + n];
     return res;
   }
+
+  T det() {
+    int m = height(), n = width();
+    assert(m == n);
+    T res = 1;
+    Matrix B(m);
+    for (int i = 0; i < m; ++i)
+      for (int j = 0; j < n; ++j) B[i][j] = (*this)[i][j];
+    for (int i = 0; i < n; ++i) {
+      int piv = i;
+      for (int j = i + 1; j < m; ++j)
+        if (B[j][i] != 0) {
+          piv = j;
+          break;
+        }
+      // if (abs(B[j][i]) > abs(B[piv][i])) piv = j;
+      if (B[piv][i] == 0) return (T)0;
+      // if (abs(B[piv][i]) < EPS) return (T)0;  // B[piv][i] < EPS
+      if (piv != i) swap(B[i], B[piv]), res = -res;
+      res *= B[i][i];
+      // for (int j = i + 1; j < m; ++j)
+      //   for (int k = n - 1; k >= i; --k) B[j][k] -= B[i][k] * B[j][i] /
+      //   B[i][i];
+      {
+        const T d = (T)1 / B[i][i];
+        for (int j = i + 1; j < n; ++j) B[i][j] *= d;
+        for (int j = i + 1; j < m; ++j)
+          for (int k = i + 1; k < n; ++k) B[j][k] -= B[i][k] * B[j][i];
+      }
+    }
+    return res;
+  }
+
   friend ostream &operator<<(ostream &os, Matrix &p) {
     size_t m = p.height(), n = p.width();
     for (int i = 0; i < m; i++) {

@@ -82,6 +82,8 @@ struct Combination {
 
   ModInt<> largeC(long long p, long long q) const {
     if (q < 0 || p < q) return 0;
+    if (q >= (long long)_fact.size()) q = p - q;
+    // if (q >= (long long)5000) q = p - q;
     ModInt<> res = rfact(q);
     for (int i = 0; i < q; ++i) res *= p - i;
     return res;
@@ -91,6 +93,11 @@ struct Combination {
   ModInt<> H(int n, int r) const {
     if (n < 0 || r < 0) return (0);
     return r == 0 ? 1 : C(n + r - 1, r);
+  }
+
+  ModInt<> largeH(long long n, long long r) const {
+    if (n < 0 || r < 0) return (0);
+    return r == 0 ? 1 : largeC(n + r - 1, r);
   }
 
   ModInt<> Catalan(int n) {

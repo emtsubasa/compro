@@ -88,10 +88,10 @@ struct SegmentTreeLaze {
     return f(vl, vr);
   }
 
-  // func(unit) == false
-  // min left: st <= res && func(seg.query(res,n))
+  // require: func(unit) == false
+  // min left: st <= res && func(seg.query(st,res + 1))
   template <typename C>
-  int find_left(int st, C &func, T acc, int k, int l, int r) {
+  int find_left(int st, C &func, T &acc, int k, int l, int r) {
     if (l + 1 == r) {
       acc = f(acc, reflect(k));
       return func(acc) ? l : -1;
@@ -113,9 +113,9 @@ struct SegmentTreeLaze {
     return find_left(st, func, acc, 1, 0, n);
   }
 
-  // max right: res <= st && func(seg.query(0,res))
+  // max right: res <= st && func(seg.query(res - 1,st))
   template <typename C>
-  int find_right(int st, C &func, T acc, int k, int l, int r) {
+  int find_right(int st, C &func, T &acc, int k, int l, int r) {
     if (l + 1 == r) {
       acc = f(reflect(k), acc);
       return func(acc) ? r : -1;
