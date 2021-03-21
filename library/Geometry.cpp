@@ -236,7 +236,7 @@ vector<CP> intersectionCC(const Circle &c1, const Circle &c2) {
 
 vector<CP> intersectionCL(const Circle &ci, const CP &s, CP t) {
   vector<CP> res(2, projectionLP(s, t, ci.o));
-  long double r = ci.r * ci.r - norm(res[0] - ci.o);
+  long double r = sqrt(ci.r * ci.r - norm(res[0] - ci.o));
   if (r <= EPS || t == s) return res;
   t -= s;
   t *= r / abs(t);
