@@ -121,6 +121,23 @@ struct Matrix {
     return res;
   }
 
+  T cofactor(int r = -1, int c = -1) {
+    int m = height(), n = width();
+    if (r < 0) r = c = m - 1;
+    assert(m == n && m > 1 && r < m && c < n);
+    Matrix mat(m - 1, n - 1);
+    for (int i = 0, rcnt = 0; i < m; ++i)
+      if (i != r) {
+        int ccnt = 0;
+        for (int j = 0; j < n; ++j)
+          if (j != c) mat[rcnt][ccnt++] = (*this)[i][j];
+        ++rcnt;
+      }
+    T res = mat.det();
+    if ((r ^ c) & 1) res *= -1;
+    return res;
+  }
+
   friend ostream &operator<<(ostream &os, Matrix &p) {
     size_t m = p.height(), n = p.width();
     for (int i = 0; i < m; i++) {

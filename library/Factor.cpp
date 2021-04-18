@@ -49,7 +49,7 @@ struct Factor {
   }
   map<long long, int> factor(long long n) {
     map<long long, int> res;
-    if (n) {
+    if (n % 2 == 0) {
       res[2] = __builtin_ctzll(n);
       n >>= __builtin_ctzll(n);
     }
