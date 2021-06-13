@@ -8,12 +8,9 @@ struct Prime {
     for (int i = 2; i <= N; ++i)
       if (!ch[i]) {
         ary.push_back(i);
-        for (int j = 2; (long long)i * j <= N; ++j) ch[i * j] = 1;
+        for (int j = i; 1LL * i * j <= N; ++j) ch[i * j] = 1;
       }
     n = ary.size();
   }
   inline const bool isprime(int n) { return !ch[n]; }
-  inline const long long &operator[](int k) const {
-    return k < n ? (ary[k]) : -1;
-  }
 };
