@@ -51,9 +51,15 @@ struct SlopeTrick {
   // add f(x) = abs(x-a) = max(0, x-a) + max(0, a-x), \/
   void add_abs(const T &a) { add_xa(a), add_ax(a); }
   // f(x) := min f(y) (y >= x), \/ -> _/
-  void clear_left() { pql.clear(); }
+  void clear_left() {
+    priority_queue<T> newpq;
+    swap(pql, newpq);
+  }
   // f(x) := min f(y) (y <= x), \/ -> \_
-  void clear_right() { pqr.clear(); }
+  void clear_right() {
+    priority_queue<T, vector<T>, greater<T>> newpq;
+    swap(pqr, newpq);
+  }
   // f(x) = min f(y) (x-b <= y <= x-a), \/ -> \_/
   void shift(const T &a, const T &b) {
     assert(a <= b);
