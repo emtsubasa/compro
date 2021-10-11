@@ -97,13 +97,16 @@ bool on_segSP(const Line &l, const CP &p) { return on_segSP(l.s, l.t, p); }
 // crossing segments? (a,b) and (c,d)
 bool iscrossSS(const CP &a, const CP &b, const CP &c, const CP &d) {
   // parallel
-  if (abs(cross(a - b, c - d)) <= EPS) {
-    return on_segSP(a, b, c) || on_segSP(a, b, d) || on_segSP(c, d, a) ||
-           on_segSP(c, d, b);
-  }
-  CP isp = intersectionLL(a, b, c, d);
-  return on_segSP(a, b, isp) && on_segSP(c, d, isp);
+  return calc_clockwiseSP(a, b, c) * calc_clockwiseSP(a, b, d) <= 0 &&
+         calc_clockwiseSP(c, d, a) * calc_clockwiseSP(c, d, b) <= 0;
+  // if (abs(cross(a - b, c - d)) <= EPS) {
+  //   return on_segSP(a, b, c) || on_segSP(a, b, d) || on_segSP(c, d, a) ||
+  //          on_segSP(c, d, b);
+  // }
+  // CP isp = intersectionLL(a, b, c, d);
+  // return on_segSP(a, b, isp) && on_segSP(c, d, isp);
 }
+
 bool iscrossSS(const Line &ll, const Line &lr) {
   return iscrossSS(ll.s, ll.t, lr.s, lr.t);
 }
