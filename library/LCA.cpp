@@ -2,7 +2,7 @@ struct LCA {
   int n, root, h;
   vector<vector<int>> g, par;
   vector<int> dep;
-  LCA(int _n = 1, int r = 0) : n(n), root(r), g(n), dep(n) {
+  LCA(int _n = 1, int r = 0) : n(_n), root(r), g(_n), dep(_n) {
     h = 1;
     while ((1 << h) <= n) ++h;
     par.assign(h, vector<int>(n, -1));
@@ -46,5 +46,10 @@ struct LCA {
       }
     return par[0][y];
   }
+
+  inline int dist(int x, int y) {
+    return dep[x] + dep[y] - 2 * dep[calc(x, y)];
+  }
+
   inline int operator[](const int &k) { return (dep.at(k)); }
 };
