@@ -1,6 +1,6 @@
 // 0-indexed
 template <class T>
-struct SegmentTree_2d {
+struct SegmentTree2d {
   // a,b,c: T, e:T(unit)
   // abc = (ab)c = a(bc)
   // ae = ea = a
@@ -9,9 +9,9 @@ struct SegmentTree_2d {
   F f;
   T unit;
   vector<vector<T>> dat;
-  SegmentTree_2d(){};
-  SegmentTree_2d(int _h, int _w, F f, T t) : f(f), unit(t) { init(_h, _w); }
-  SegmentTree_2d(const vector<vector<T>> &v, F f, T t) : f(f), unit(t) {
+  SegmentTree2d(){};
+  SegmentTree2d(int _h, int _w, F f, T t) : f(f), unit(t) { init(_h, _w); }
+  SegmentTree2d(const vector<vector<T>> &v, F f, T t) : f(f), unit(t) {
     int _h = v.size(), _w = _h ? v[0].size() : 0;
     init(_h, _w);
     for (int i = 0; i < _h; ++i) {
