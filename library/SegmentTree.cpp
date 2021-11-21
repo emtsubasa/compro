@@ -10,16 +10,16 @@ struct SegmentTree {
   T unit;
   vector<T> dat;
   SegmentTree(){};
-  SegmentTree(int newn, F f, T t) : f(f), unit(t) { init(newn); }
+  SegmentTree(int _n, F f, T t) : f(f), unit(t) { init(_n); }
   SegmentTree(const vector<T> &v, F f, T t) : f(f), unit(t) {
     int _n = v.size();
-    init(v.size());
+    init(_n);
     for (int i = 0; i < _n; ++i) dat[n + i] = v[i];
     for (int i = n - 1; i; --i) dat[i] = f(dat[i << 1], dat[(i << 1) | 1]);
   }
-  void init(int newn) {
+  void init(int _n) {
     n = 1;
-    while (n < newn) n <<= 1;
+    while (n < _n) n <<= 1;
     dat.assign(n << 1, unit);
   }
 
