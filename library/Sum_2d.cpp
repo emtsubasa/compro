@@ -3,7 +3,8 @@ template <class T>
 struct Sum_2d {
   int h, w;
   vector<vector<T>> v;
-  Sum_2d(vector<vector<T>> &_v = vector<vector<T>>()) : v(_v) {
+  Sum_2d() {}
+  Sum_2d(const vector<vector<T>> &_v) : v(_v) {
     h = v.size(), w = h ? v[0].size() : 0;
     for (int i = 0; i < h; ++i)
       for (int j = 0; j < w; ++j) {
