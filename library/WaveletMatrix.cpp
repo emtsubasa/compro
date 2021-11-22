@@ -88,7 +88,7 @@ struct WaveletMatrix {
     return r - l;
   }
   //   WIP  search k-th x (0-indexed)
-  int select(const T &x, int k) {}
+  int select(const T &x, int k) { return -1; }
   // k-th(0-indexed) smallest number in [l,r)
   T kth_smallest(int l, int r, int k) {
     assert(0 <= k && k < r - l);
