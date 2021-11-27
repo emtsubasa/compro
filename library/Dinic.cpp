@@ -20,7 +20,7 @@ struct Dinic {
     return (int)g[start].size() - 1;
   }
 
-  int change(int x, int idx, T newf, int s, int t) {
+  T change(int x, int idx, T newf, int s, int t) {
     int y = g[x][idx].to, ridx = g[x][idx].rev;
     newf -= g[x][idx].cap + g[y][ridx].cap;
     if (newf > 0) {
@@ -28,7 +28,7 @@ struct Dinic {
       return solve(s, t);
     } else if (newf < 0) {
       g[x][idx].cap += newf;
-      if (g[x][idx].cap >= 0) return 0;
+      if (g[x][idx].cap >= 0) return T(0);
       swap(newf = 0, g[x][idx].cap);
       g[y][ridx].cap += newf;
       newf += solve(x, y, -newf);
@@ -38,7 +38,7 @@ struct Dinic {
       }
       return newf;
     }
-    return 0;
+    return T(0);
   }
 
   void bfs(int st) {
