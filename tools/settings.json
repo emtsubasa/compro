@@ -1,4 +1,14 @@
 {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "files.eol": "\n",
+    "workbench.iconTheme": "vscode-icons",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "files.autoSave": "off",
+    "python.formatting.provider": "autopep8",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+    "workbench.startupEditor": "none",
     //ここから https://qiita.com/popunbom/items/7d02fc75ad23b735d28c
     // editor.wordSeparators: 単語単位での移動を行う場合の区切り文字を指定
     // 日本語文書で単語移動を使うため、助詞や読点、括弧を区切り文字として指定する
@@ -71,7 +81,7 @@
         "*.synctex.gz",
         "*.nav",
         "*.snm",
-        "*.vrb",
+        "*.vrb"
     ],
     // latex-workshop.view.pdf.viewer: PDF ビューアの開き方
     // VSCode 自体には PDF ファイルを閲覧する機能が備わっていないが、
@@ -88,4 +98,6 @@
     // .tex ファイルの保存と同時に自動的にビルドを実行する設定があるが、文書が大きくなるに連れてビルドにも
     // 時間がかかってしまい、ビルドプログラムの負荷がエディタに影響するため、無効化しておく。
     "latex-workshop.latex.autoBuild.run": "never",
+    "window.zoomLevel": 1,
+    "terminal.integrated.mouseWheelScrollSensitivity": 0.1
 }
