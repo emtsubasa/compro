@@ -1,0 +1,77 @@
+% -*- Coding: utf-8 -*-
+\documentclass[dvipdfmx,titlepage,11pt, a4paper]{jsarticle}%A４用紙縦,明朝（デフォルト）１１ポイント
+\usepackage[top=30truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}%余白調整
+
+\usepackage[cache=false]{minted}%pip install pygments
+\usemintedstyle{google}
+\newminted[mintedcpp]{c++}{
+    linenos,
+    fontfamily=courier,
+    fontsize=\footnotesize,
+    breaklines,
+    breakanywhere,
+    frame=lines,
+    tabsize=2
+}
+\newmintedfile[fmintedcpp]{c++}{
+    linenos,
+    fontfamily=courier,
+    fontsize=\footnotesize,
+    breaklines,
+    breakanywhere,
+    frame=lines,
+    tabsize=2
+}
+\newmintedfile[fmintedtex]{tex}{
+    linenos,
+    fontfamily=courier,
+    fontsize=\footnotesize,
+    breaklines,
+    breakanywhere,
+    frame=lines,
+    tabsize=2
+}
+\usepackage{enumerate}
+%\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{ascmac}%                       %数式環境強化
+\usepackage{amsmath, amssymb}%             %underset therfore
+% \usepackage{multicol}
+% \usepackage{color}
+% \usepackage{xcolor}
+\makeatletter
+%章番号付き式番号
+\renewcommand{\theequation}{%
+	\arabic{section}.\arabic{equation}%
+}%
+\@addtoreset{equation}{section}%
+\renewcommand{\thesection}{Exercise 3 -- \arabic{section}}
+\newcommand{\bmtheta}{\bm{\theta}}
+
+\makeatother
+
+
+\title{タイトル}
+\author{writer}
+
+% main 部分
+\begin{document}
+\maketitle
+
+\section{}
+\fmintedtex{template.tex}
+\newpage
+\section{}
+\newpage
+\section{}
+\newpage
+\section{}
+\newpage
+\section{}
+test\cite{sincho}\cite[第3章127ページ]{chikuma}。
+\begin{thebibliography}{99}
+    \bibitem{sincho} 太宰治、『走れメロス』、新潮（1940年5月号）
+    \bibitem{chikuma} 太宰治、太宰治全集3（ちくま文庫）、筑摩書房(1988).
+    \bibitem{schiller} Friedrich von Schiller, バラード¥textit{de:Die B¥"{u}rgschaft}, 1815.
+\end{thebibliography}
+\end{document}
