@@ -11,22 +11,30 @@
     "workbench.startupEditor": "none",
     // ---------------------------------------latex
     "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.tools": [
         {
-            "name": "Latexmk (pLaTeX)",
+            "name": "platex",
             "command": "wsl.exe",
             "args": [
-                "latexmk",
-                "-f",
-                "-gg",
-                "-pv",
-                "-latex= platex",
-                "-latexoption= -kanji=utf8 -no-guess-input-env",
+                "platex",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "%DOC%",
-                "-shell-escape"
+                "-kanji=utf8",
+                "-guess-input-enc",
+                "--shell-escape",
+                "%DOCFILE%.tex"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "wsl.exe",
+            "args": [
+                "dvipdfmx",
+                "%DOCFILE%"
             ]
         }
     ],
@@ -34,7 +42,8 @@
         {
             "name": "pLaTeX",
             "tools": [
-                "Latexmk (pLaTeX)"
+                "platex",
+                "dvipdfmx"
             ]
         }
     ],
@@ -64,12 +73,9 @@
         "*.snm",
         "*.vrb"
     ],
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.autoClean.run": "onFailed",
-    "latex-workshop.latex.autoBuild.run": "never",
     // ---------------------------------------
     "terminal.integrated.mouseWheelScrollSensitivity": 0.1,
-    "window.zoomLevel": 1,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "security.workspace.trust.untrustedFiles": "open"
 }
