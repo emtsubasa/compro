@@ -3,79 +3,8 @@
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
     "files.eol": "\n",
-    "workbench.iconTheme": "vscode-icons",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "files.autoSave": "off",
-    "python.formatting.provider": "autopep8",
-    "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
     "workbench.startupEditor": "none",
-    // ---------------------------------------latex
-    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.autoClean.run": "onFailed",
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.tools": [
-        {
-            "name": "platex",
-            "command": "wsl.exe",
-            "args": [
-                "platex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-kanji=utf8",
-                "-guess-input-enc",
-                "--shell-escape",
-                "%DOCFILE%.tex"
-            ]
-        },
-        {
-            "name": "dvipdfmx",
-            "command": "wsl.exe",
-            "args": [
-                "dvipdfmx",
-                "%DOCFILE%"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "pLaTeX",
-            "tools": [
-                "platex",
-                "dvipdfmx"
-            ]
-        }
-    ],
-    "latex-workshop.latex.clean.fileTypes": [
-        "*.aux",
-        "*.bbl",
-        "*.blg",
-        "*.dvi",
-        "*.idx",
-        "*.ind",
-        "*.lof",
-        "*.lot",
-        "*.out",
-        "*.toc",
-        "*.acn",
-        "*.acr",
-        "*.alg",
-        "*.glg",
-        "*.glo",
-        "*.gls",
-        "*.ist",
-        "*.fls",
-        "*.log",
-        "*.fdb_latexmk",
-        "*.synctex.gz",
-        "*.nav",
-        "*.snm",
-        "*.vrb"
-    ],
-    // ---------------------------------------
-    "terminal.integrated.mouseWheelScrollSensitivity": 0.1,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "security.workspace.trust.untrustedFiles": "open"
+    "editor.suggestSelection": "first"
 }
